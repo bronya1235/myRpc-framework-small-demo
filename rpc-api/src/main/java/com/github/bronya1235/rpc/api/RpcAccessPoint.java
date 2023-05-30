@@ -1,7 +1,10 @@
 package com.github.bronya1235.rpc.api;
 
+import com.github.bronya1235.rpc.spi.ServiceSupport;
+
 import java.io.Closeable;
 import java.net.URI;
+import java.util.Collection;
 
 
 /**
@@ -42,4 +45,23 @@ public interface RpcAccessPoint extends Closeable{
 	 * @throws Exception
 	 */
 	Closeable startServer() throws Exception;
+
+	/**
+	 * 获取注册中心的方法，默认实现，不需要实现类实现的
+	 * @param nameServiceUri 注册中心地址
+	 * @return 返回一个注册中心的实例
+	 */
+	default NameService getNameService(URI nameServiceUri){
+		//spi的方式加载所有的nameService的实现类
+		Collection<NameService> nameServices = ServiceSupport.loadAll(NameService.class);
+		for (NameService nameService : nameServices) {
+			//逐个检查实现类，找到一个支持协议的nameService进行连接，并把NameService返回
+			//在本例中，支持的协议是file文件，在File的toURI方法中，会自动填充Scheme为File
+			if(nameService.supportedSchemes().contains(nameServiceUri.getScheme())) {
+				nameService.connect(nameServiceUri);
+				return nameService;
+			}
+		}
+		return null;
+	}
 }
