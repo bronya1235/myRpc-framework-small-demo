@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.Closeable;
 import java.io.File;
-import java.io.IOException;
 import java.net.URI;
 
 /**
@@ -18,8 +17,8 @@ import java.net.URI;
  * @Description com.github.bronya1235.rpc.server
  * @Function
  */
-public class server {
-	private static final Logger logger = LoggerFactory.getLogger(server.class);
+public class Server {
+	private static final Logger logger = LoggerFactory.getLogger(Server.class);
 
 	public static void main(String[] args) throws Exception {
 		//服务名

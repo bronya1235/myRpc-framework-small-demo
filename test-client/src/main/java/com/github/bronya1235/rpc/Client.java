@@ -24,7 +24,7 @@ public class Client {
 		String serviceName = HelloService.class.getCanonicalName();
 		//查询注册中心用的
 		File tmpDirFile = new File(System.getProperty("java.io.tmpdir"));
-		File file = new File(tmpDirFile, "simple_rpc_name_service.data");
+		File file = new File(tmpDirFile, "myRpc_name_service.data");
 		//调用方法的参数
 		String name = "高紫越";
 		//同样使用spi调用

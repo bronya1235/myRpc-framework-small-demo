@@ -10,6 +10,7 @@
         <module name="rpc-api" />
         <module name="test-server" />
         <module name="service-api" />
+        <module name="rpc-netty" />
       </profile>
     </annotationProcessing>
   </component>
