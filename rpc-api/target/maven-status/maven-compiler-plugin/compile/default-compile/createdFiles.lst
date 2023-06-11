@@ -1,0 +1,5 @@
+com\github\bronya1235\rpc\spi\ServiceSupport.class
+com\github\bronya1235\rpc\spi\Singleton.class
+com\github\bronya1235\rpc\spi\ServiceLoadException.class
+com\github\bronya1235\rpc\api\NameService.class
+com\github\bronya1235\rpc\api\RpcAccessPoint.class

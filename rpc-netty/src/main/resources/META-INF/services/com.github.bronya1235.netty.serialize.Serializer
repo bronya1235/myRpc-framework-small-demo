@@ -1,0 +1,3 @@
+com.github.bronya1235.netty.serialize.impl.MetadataSerializer
+com.github.bronya1235.netty.serialize.impl.StringSerializer
+com.github.bronya1235.netty.serialize.impl.RpcRequestSerializer

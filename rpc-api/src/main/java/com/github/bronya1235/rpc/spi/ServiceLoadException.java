@@ -7,4 +7,5 @@ package com.github.bronya1235.rpc.spi;
  * @Function
  */
 public class ServiceLoadException extends RuntimeException{
+
 }
